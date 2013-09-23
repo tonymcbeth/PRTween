@@ -426,6 +426,7 @@ static NSArray *animationSelectorsForUIView = nil;
         timeOffset = 0;
         if (timer == nil) {
             timer = [NSTimer scheduledTimerWithTimeInterval:kPRTweenFramerate target:self selector:@selector(update) userInfo:nil repeats:YES];
+            [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
         }
         self.defaultTimingFunction = &PRTweenTimingFunctionQuadInOut;
     }
